@@ -650,29 +650,31 @@ name = "todos-api"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "coverage" },
     { name = "fastapi", extra = ["standard"] },
     { name = "httpx" },
-    { name = "pytest" },
-    { name = "pytest-cov" },
 ]
 
 [package.dev-dependencies]
 dev = [
+    { name = "coverage" },
+    { name = "pytest" },
+    { name = "pytest-cov" },
     { name = "ruff" },
 ]
 
 [package.metadata]
 requires-dist = [
-    { name = "coverage", specifier = ">=7.10.7" },
     { name = "fastapi", extras = ["standard"], specifier = ">=0.118.0" },
     { name = "httpx", specifier = ">=0.28.1" },
-    { name = "pytest", specifier = ">=8.4.2" },
-    { name = "pytest-cov", specifier = ">=7.0.0" },
 ]
 
 [package.metadata.requires-dev]
-dev = [{ name = "ruff", specifier = ">=0.13.3" }]
+dev = [
+    { name = "coverage", specifier = ">=7.10.7" },
+    { name = "pytest", specifier = ">=8.4.2" },
+    { name = "pytest-cov", specifier = ">=7.0.0" },
+    { name = "ruff", specifier = ">=0.13.3" },
+]
 
 [[package]]
 name = "typer"

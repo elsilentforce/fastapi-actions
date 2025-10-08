@@ -5,14 +5,14 @@ description = "Test project for implementing GitHub Actions"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "coverage>=7.10.7",
     "fastapi[standard]>=0.118.0",
     "httpx>=0.28.1",
-    "pytest>=8.4.2",
-    "pytest-cov>=7.0.0",
 ]
 
 [dependency-groups]
 dev = [
+    "coverage>=7.10.7",
+    "pytest>=8.4.2",
+    "pytest-cov>=7.0.0",
     "ruff>=0.13.3",
 ]
