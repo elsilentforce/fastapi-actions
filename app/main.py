@@ -11,4 +11,4 @@ def index():
 
 @app.post("/token")
 def generate_token():
-    return { "token": "foo" }
+    return { "token": "foo", "user": "bar" }
