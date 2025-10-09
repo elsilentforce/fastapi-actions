@@ -10,7 +10,10 @@ permissions:
 
 jobs:
   python-coverage:
+    name: Coverage check
     runs-on: ubuntu-latest
+    env:
+      COVERAGE_THRESHOLD: ${{ vars.COVERAGE_THRESHOLD || 90 }}
 
     steps:
       - uses: actions/checkout@v5
@@ -31,8 +34,8 @@ jobs:
         uses: py-cov-action/python-coverage-comment-action@v3
         with:
           GITHUB_TOKEN: ${{ github.token }}
-          MINIMUM_GREEN: 90
+          MINIMUM_GREEN: ${{ env.COVERAGE_THRESHOLD }}
           MINIMUM_ORANGE: 70
 
       - name: Fail if below threshold
-        run: uv run coverage report --fail-under=90
+        run: uv run coverage report --fail-under=${{ env.COVERAGE_THRESHOLD }}
