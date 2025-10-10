@@ -27,6 +27,9 @@ jobs:
       - name: Install the project
         run: uv sync --locked --all-extras --dev
 
+      - name: Check code linting
+        run: uv run ruff check
+
       - name: Run tests and generate coverage details
         run: uv run pytest --cov=app
 
